@@ -33,6 +33,17 @@ spark-submit --class solution.SensorStreamConsumer --master local[2] ms-sparkstr
 
 step 4: writing to hbase
 
+first make sure that you have the correct version of HBase installed, it should be 1.1.1:
+
+cat /opt/mapr/hbase/hbaseversion 
+1.1.1
+
+Next make sure the Spark HBase compatibility version is correctly configured here: 
+cat  /opt/mapr/spark/spark-1.5.2/mapr-util/compatibility.version 
+hbase_versions=1.1.1
+
+If this is not 1.1.1 fix it.
+
 
 Create an hbase table to write to:
 launch the hbase shell
